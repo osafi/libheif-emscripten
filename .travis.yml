@@ -9,6 +9,8 @@ addons:
 script:
   - sed -i '/NO_EXIT_RUNTIME=1/a \ \ \ \ -s NO_DYNAMIC_EXECUTION=1\ \\' libheif/build-emscripten.sh
   - cat libheif/build-emscripten.sh
+  - cp ./post.js libheif/post.js
+  - cat libheif/post.js
   - ./travis-build.sh
   - cd $TRAVIS_BUILD_DIR
   - ls -la libheif
